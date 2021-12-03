@@ -1,0 +1,38 @@
+from random import randint, choice
+completed_apples={}
+quality_of_apples={}
+def create_rating(test):
+    rate_dict={}
+    for ind, t_set in test.items():
+        rate_dict[ind]=sum(t_set)/len(t_set)
+    sorted_ind=sorted(rate_dict,key=rate_dict.get,reverse=True)
+    return sorted_ind, rate_dict
+
+def show_list(inx):
+    return [completed_apples[inx], quality_of_apples[inx]]
+
+colors=["red", "green", "blue"]
+sizes=["big", "small", "middle"]
+
+
+indexes=set()
+
+for i in range(5):
+    tmp=randint(100,1000)
+    tmp=100
+    while tmp in indexes:
+        tmp=randint(100,1000)
+    indexes.add(tmp)
+    index="IND"+str(tmp)
+    apple={
+        "color":choice(colors),
+        "size":choice(sizes)
+        }
+    scores_set=[randint(1,10) for i in range(10)]
+    completed_apples[index]=apple
+    quality_of_apples[index]=scores_set
+
+top, rating=create_rating(quality_of_apples)
+for i in top:
+    print(rating[i], show_list(i))
+
