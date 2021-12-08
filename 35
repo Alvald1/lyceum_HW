@@ -1,0 +1,28 @@
+program z35;
+
+var
+  s, e, count, i, min, max: integer;
+  flag: boolean;
+
+begin
+  s := 1476;
+  e := 7039;
+  count := 0;
+  flag := false;
+  min := 0;
+  max := 0;
+  for i := s to e do
+  begin
+    if (i mod 2 = 0) and (i mod 16 <> 0) and (i div 10 mod 10 >= 4) then begin
+      if not flag then begin
+        min := i;
+        flag := true;
+      end 
+      else begin
+        max := i;
+      end;
+      count := count + 1;
+    end;
+  end;
+  write(count, ' ', trunc((min + max) / 2));
+end.
