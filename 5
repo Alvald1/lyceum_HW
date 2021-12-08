@@ -11,9 +11,9 @@ begin
   while i <= e do
   begin
     while i mod 11 = 1 do i := i + 1;
-    max := i;
+    max := i
+    if (i mod 7 <> 0) and (i mod 13 <> 0) and (i mod 17 <> 0) and (i mod 19 <> 0) then count := count + 1;   ;
     i := i + 11;
-    if (i mod 7 <> 0) and (i mod 13 <> 0) and (i mod 17 <> 0) and (i mod 19 <> 0) then count := count + 1;    
   end;
   write(count, ' ', max);
 end.
