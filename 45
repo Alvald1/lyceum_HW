@@ -1,0 +1,21 @@
+program z45;
+
+var
+  s, e, count, i, max: integer;
+  flag: boolean;
+
+begin
+  s := -9563;
+  e := -3102;
+  count := 0;
+  flag := false;
+  max := 0;
+  for i := s to e do
+  begin
+    if (i mod 7 = 0) and (i mod 11 <> 0) and (i mod 23 <> 0) and (i mod 10 <> -8) then begin
+      max := i;
+      count := count + 1;
+    end;
+  end;
+  write(count, ' ', max);
+end.
