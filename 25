@@ -1,0 +1,19 @@
+program z25;
+
+var
+  s, e, count, i, sum: integer;
+
+begin
+  s := 3672;
+  e := 9117;
+  count := 0;
+  sum := 0;
+  for i := s to e do
+  begin
+    if (i mod 3 = 2) and (i mod 5 = 4) then begin
+      sum := sum + i;
+      count := count + 1;
+    end;
+  end;
+  write(count, ' ', sum);
+end.
