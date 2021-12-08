@@ -1,0 +1,19 @@
+program z5;
+
+var
+  s, e, count, i, max: integer;
+
+begin
+  s := 1606;
+  e := 9680;
+  count := 0;
+  i := s;
+  while i <= e do
+  begin
+    while i mod 11 = 1 do i := i + 1;
+    max := i;
+    i := i + 11;
+    if (i mod 7 <> 0) and (i mod 13 <> 0) and (i mod 17 <> 0) and (i mod 19 <> 0) then count := count + 1;    
+  end;
+  write(count, ' ', max);
+end.
