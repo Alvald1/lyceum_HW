@@ -16,3 +16,7 @@ begin
   end;
   print(count);
 end.
+
+
+
+Out: 4095
