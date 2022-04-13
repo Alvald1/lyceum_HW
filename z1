@@ -14,3 +14,7 @@ begin
       inc(count);
   print(count);
 end.
+
+
+
+Out: 84
