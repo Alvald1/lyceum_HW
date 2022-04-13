@@ -16,3 +16,6 @@ begin
   end;
   print(count);
 end.
+
+
+Out: 485
