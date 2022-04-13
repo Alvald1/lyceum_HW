@@ -1,0 +1,18 @@
+program z2;
+
+function foo(a: integer): integer;
+begin
+  if a = 0 then foo := 0
+  else if a mod 3 = 0 then foo := foo(a div 3)
+  else foo := a mod 3 + foo(a - a mod 3);
+end;
+
+begin
+  var count := 1;
+  while true do
+  begin
+    if foo(count) = 11 then break;
+    inc(count);
+  end;
+  print(count);
+end.
